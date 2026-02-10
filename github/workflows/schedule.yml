@@ -1,0 +1,16 @@
+name: Schedule
+
+on:
+    schedule:
+        - cron: '*/2 * * *' # Runs every 2 minutes
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Run scheduled task
+              run: echo "This is a scheduled task running every 2 minutes."
+
+            - name: Current Time
+              run: echo "Current time on server - $(date)"
